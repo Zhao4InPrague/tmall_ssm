@@ -8,12 +8,16 @@ import java.util.List;
 public interface CategoryMapper {
 
     //这里的page也没有初始化呀start和count这些信息，咋填进去的？admin_category_list?start=5这样的get，咋和page对象勾连的？？？
-    public List<Category> list(Page page);
+    List<Category> list(Page page);
 
-    public int total();
+    int total();
 
     void add(Category category);
 
     void delete(int id);
+
+    Category get(int id);
+
+    void update(Category category);
 
 }
