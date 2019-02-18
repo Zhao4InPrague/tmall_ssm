@@ -50,10 +50,10 @@
 				<tr>
 					<td>${p.id}</td>
 					<td>${p.name}</td>
-					<td><a href="admin_property_edit?id=${p.id}"><span
+					<td><a href="admin_property_edit?pid=${p.id}"><span
 							class="glyphicon glyphicon-edit"></span></a></td>
 					<td><a deleteLink="true"
-						   href="admin_property_delete?id=${p.id}"><span
+						   href="admin_property_delete?pid=${p.id}"><span
 							class=" 	glyphicon glyphicon-trash"></span></a></td>
 
 				</tr>

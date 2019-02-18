@@ -30,9 +30,9 @@ public class PropertyController {
     }
 
     @RequestMapping("admin_property_delete")
-    public String delete(Model model, int id) {
-        Property p = propertyService.get(id);
-        propertyService.delete(id);
+    public String delete(Model model, int pid) {
+        Property p = propertyService.get(pid);
+        propertyService.delete(pid);
         return "redirect:admin_property_list?cid="+p.getCid();
     }
 
