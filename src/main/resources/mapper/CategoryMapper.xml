@@ -14,4 +14,8 @@
     <select id="total" resultType="int">
         select count(*) from category
     </select>
+    <!--keyProperty="id" useGeneratedKeys="true" 以确保Category对象通过mybatis增加到数据库之后得到的id增长值会被设置在Category对象上-->
+    <insert id="add"  keyProperty="id"  useGeneratedKeys="true" parameterType="Category" >
+        insert into category ( name ) values (#{name})
+    </insert>
 </mapper>

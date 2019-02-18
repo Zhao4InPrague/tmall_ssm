@@ -12,4 +12,6 @@ public interface CategoryMapper {
 
     public int total();
 
+    void add(Category category);
+
 }
