@@ -1,8 +1,7 @@
 package com.how2java.tmall.pojo;
 
 public class Category {
-
-    private int id;
+    private Integer id;
 
     private String name;
 
@@ -21,5 +20,4 @@ public class Category {
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
-
 }
