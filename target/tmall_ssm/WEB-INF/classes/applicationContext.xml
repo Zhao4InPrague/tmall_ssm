@@ -7,6 +7,9 @@
 
     <context:annotation-config />
     <context:component-scan base-package="com.how2java.tmall.service" />
+    <!--<context:component-scan base-package="com.how2java.tmall">-->
+        <!--<context:include-filter type="aspectj" expression="com.how2java.tmall.*" />-->
+    <!--</context:component-scan>-->
 
     <!-- 导入数据库配置文件 -->
     <context:property-placeholder location="classpath:jdbc.properties"/>
