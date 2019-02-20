@@ -18,4 +18,6 @@ public interface UserService {
 
     boolean isExist(String name);
 
+    User get(String name, String password);
+
 }
