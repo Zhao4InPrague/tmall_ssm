@@ -12,6 +12,9 @@ public class OrderItem {
     private Integer number;
 
     /*非数据库字段*/
+    //既然已经有了pid干嘛又要product？可能要放在对象里直接打到前端吧
+    //好像主要是为了firstProductImage
+    //应该是为了上面，不然的话用pid都可以去product的
     private Product product;
 
     public Integer getId() {
