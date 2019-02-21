@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e66a498c-1182-401b-aa77-6572e562f461" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/how2java/tmall/controller/ForeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/how2java/tmall/controller/ForeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/how2java/tmall/service/OrderService.java" afterPath="$PROJECT_DIR$/src/main/java/com/how2java/tmall/service/OrderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/how2java/tmall/service/impl/OrderServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/how2java/tmall/service/impl/OrderServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,8 +23,8 @@
       <file leaf-file-name="ForeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/how2java/tmall/controller/ForeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="298" column="37" lean-forward="true" selection-start-line="298" selection-start-column="37" selection-end-line="298" selection-end-column="37" />
+            <state relative-caret-position="4448">
+              <caret line="339" column="5" lean-forward="true" selection-start-line="339" selection-start-column="5" selection-end-line="339" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -555,12 +551,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1550456784126</updated>
-      <workItem from="1550456787438" duration="62954000" />
+      <workItem from="1550456787438" duration="64784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62954000" />
+    <option name="totallyTimeSpent" value="64784000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="823" extended-state="0" />
@@ -576,7 +572,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3997253" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3997253" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1129,8 +1125,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/how2java/tmall/controller/ForeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="298" column="37" lean-forward="true" selection-start-line="298" selection-start-column="37" selection-end-line="298" selection-end-column="37" />
+        <state relative-caret-position="4448">
+          <caret line="339" column="5" lean-forward="true" selection-start-line="339" selection-start-column="5" selection-end-line="339" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
