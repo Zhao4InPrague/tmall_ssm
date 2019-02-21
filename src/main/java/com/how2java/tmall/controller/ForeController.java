@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.how2java.tmall.comparator.*;
 import com.how2java.tmall.pojo.*;
 import com.how2java.tmall.service.*;
+import org.apache.commons.lang.math.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.HtmlUtils;
 
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Collections;
 
@@ -35,6 +38,8 @@ public class ForeController {
     CategoryService categoryService;
     @Autowired
     OrderItemService orderItemService;
+    @Autowired
+    OrderService orderService;
 
     @RequestMapping("foreregister")
     public String register(Model model, User user) {
@@ -258,6 +263,41 @@ public class ForeController {
         }
         orderItemService.delete(oiid);
         return "success";
+    }
+
+    @RequestMapping("forecreateOrder")
+    public String createOrder(Model model, Order o, HttpSession session) {
+        //像是setUser，setProducts这些没有关联数据库的对象数据，都不会在这种情况下set的，只会在要用的时候
+        //比如有了uid，那么用UserService.get(uid)取出，用的时候再set到对象里
+        User user = (User) session.getAttribute("user");
+        String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()) + RandomUtils.nextInt(10000);
+        o.setOrderCode(orderCode);
+        o.setDeliveryDate(new Date());
+        o.setUid(user.getId());
+        o.setStatus(OrderService.waitPay);
+        List<OrderItem> ois = (List<OrderItem>) session.getAttribute("ois");
+        float total = orderService.add(o, ois);
+        return "redirect:forealipay?oid="+o.getId() +"&total="+total;
+    }
+
+    @RequestMapping("forepayed")
+    public String payed(int oid, float total, Model model) {
+        //这个就是简单的更新订单状态就好了
+        Order order = orderService.get(oid);
+        order.setStatus(OrderService.waitDelivery);
+        order.setPayDate(new Date());
+        orderService.update(order);
+        model.addAttribute("o", order);
+        return "fore/payed";
+    }
+
+    @RequestMapping("forebought")
+    public String bought(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        List<Order> os = orderService.list(user.getId(), OrderService.delete);
+        orderItemService.fill(os);
+        model.addAttribute("os", os);
+        return "fore/bought";
     }
 
 }
