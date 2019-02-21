@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.HtmlUtils;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 
@@ -32,6 +33,8 @@ public class ForeController {
     ReviewService reviewService;
     @Autowired
     CategoryService categoryService;
+    @Autowired
+    OrderItemService orderItemService;
 
     @RequestMapping("foreregister")
     public String register(Model model, User user) {
@@ -147,6 +150,50 @@ public class ForeController {
         productService.setSaleAndReviewNumber(ps);
         model.addAttribute("ps", ps);
         return "fore/searchResult";
+    }
+
+    @RequestMapping("forebuyone")
+    public String buyone(int pid, int num, HttpSession session) {
+        Product p = productService.get(pid);
+        User u = (User) session.getAttribute("user");
+        int oiid = 0;
+        boolean found = false;
+
+        List<OrderItem> ois = orderItemService.listByUser(u.getId());
+        for(OrderItem oi: ois) {
+            if(oi.getProduct().getId().intValue() == p.getId().intValue()){
+                oi.setNumber(oi.getNumber()+num);
+                orderItemService.update(oi);
+                oiid = oi.getId();
+                found = true;
+                break;
+            }
+        }
+        if(!found) {
+            OrderItem oi = new OrderItem();
+            //为啥这个时候不setProduct
+            oi.setNumber(num);
+            oi.setPid(pid);
+            oi.setUid(u.getId());
+            orderItemService.add(oi);
+            oiid = oi.getId();
+        }
+        return "redirect:forebuy?oiid="+oiid;
+    }
+
+    @RequestMapping("forebuy")
+    public String buy(String[] oiid ,Model model, HttpSession session){
+        List<OrderItem> ois = new ArrayList<>();
+        float total = 0;
+        for(String strid: oiid) {
+            int id = Integer.parseInt(strid);
+            OrderItem oi = orderItemService.get(id);
+            total += oi.getProduct().getPromotePrice()*oi.getNumber();
+            ois.add(oi);
+        }
+        session.setAttribute("ois", ois);
+        model.addAttribute("total", total);
+        return "fore/buy";
     }
 
 }
